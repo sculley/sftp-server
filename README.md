@@ -49,7 +49,7 @@ sftp-server is an in-memory SFTP Server implementation written in Go that can be
 ### Usage
 
 ```go
-server := sftpserver.NewSFTPServer("localhost:2022", "sculley", "password")
+server := sftpserver.New("localhost:2022", "sculley", "password")
 if err := server.Start(); err != nil {
     log.Fatal("Failed to start test SFTP server:", err)
 }
