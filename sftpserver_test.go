@@ -17,7 +17,7 @@ const (
 )
 
 func TestSuccessfulConnection(t *testing.T) {
-	server := NewSFTPServer(addr, username, password)
+	server := New(addr, username, password)
 	if err := server.Start(); err != nil {
 		log.Fatal("Failed to start test SFTP server:", err)
 	}
@@ -41,7 +41,7 @@ func TestSuccessfulConnection(t *testing.T) {
 }
 
 func TestFailedConnection(t *testing.T) {
-	server := NewSFTPServer(addr, username, password)
+	server := New(addr, username, password)
 	if err := server.Start(); err != nil {
 		log.Fatal(failedServerStartErrorMessage, err)
 	}

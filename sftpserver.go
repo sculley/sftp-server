@@ -23,7 +23,7 @@ type SFTPServer struct {
 	listener   net.Listener
 }
 
-func NewSFTPServer(addr, username, password string) *SFTPServer {
+func New(addr, username, password string) *SFTPServer {
 	hostKey, err := generateTempHostKey()
 	if err != nil {
 		return nil
